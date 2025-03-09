@@ -15,17 +15,19 @@ const rankingData = [
   { entity: 'Ruhuna', apl: 2402, ppl: 2402 },
   { entity: 'SLIIT', apl: 1335, ppl: 1328 },
   { entity: 'USJ', apl: 567, ppl: 560 },
-  
+
 ];
 
 
 export default function Home() {
   return (
     <>
-    <Navbar/>
-    <FilterArea/>
-    <RegionalPieChart/>
-    <EntityRanking data={rankingData} />
+      <Navbar />
+      <FilterArea />
+      <div className="flex flex-row">
+        <div className="w-1/2"> <EntityRanking data={rankingData} /></div>
+        <div className="w-1/2">    <RegionalPieChart /> </div>
+      </div>
     </>
   );
 }
